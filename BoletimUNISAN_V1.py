@@ -1,8 +1,12 @@
 #BOLETIM UNISAN 
 #PROGRAMADOR: YANGZ
-
-#VERSÃO - V1 - Boletim escolar com nota de 2 bimestres, sendo a segunda nota tendo peso dois.
 #DATA: 12/05/22
+
+#V1 - Boletim escolar com nota de 2 bimestres, sendo a segunda nota tendo peso dois
+#++ loop
+#++ menu de 2 opções e se não forem escolhidas dará erro
+#++ cores no terminal
+
 
 #BIBLIOTECA DE CONTROLE DE TEMPO
 from time import sleep
