@@ -5,6 +5,7 @@
 #V1 - Programa que calcula o IMC de uma pessoa
 #++ loop
 #++ menu de 4 opções e se não forem escolhidas dará erro
+#++ manipulação dados
 
 #BIBLIOTECA DE CONTROLE DE TEMPO
 from time import sleep
@@ -15,7 +16,6 @@ red = '\033[91m'
 green = '\033[92m'
 yellow = '\033[93m'
 blue = '\033[94m'
-
 #LIMPAR
 def limpar():
     print("\n" * 100)
