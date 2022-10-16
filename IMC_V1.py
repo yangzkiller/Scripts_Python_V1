@@ -9,6 +9,13 @@
 #BIBLIOTECA DE CONTROLE DE TEMPO
 from time import sleep
 
+#TERMINAL COLOR
+reset = '\033[37m'
+red = '\033[91m'
+green = '\033[92m'
+yellow = '\033[93m'
+blue = '\033[94m'
+
 #LIMPAR
 def limpar():
     print("\n" * 100)
