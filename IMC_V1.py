@@ -21,23 +21,23 @@ def limpar():
     print("\n" * 100)
 #CABEÇALHO
 def cabecalho():
-    print("-=" *20)
-    print("{:^40}".format("CALCULADORA IMC"))
-    print('-=' *20)
+    print(red,"-=" *20)
+    print(yellow,"{:^40}".format("CALCULADORA IMC"))
+    print(red,'-=' *20)
 #MENU
 def menu():
     global usuario
-    print ("{:^40}".format("||   MENU   ||"))
-    print ("--" * 20)
-    print("[1] Calcular IMC \n[2] Mostrar tabela de referencia \n[3] Limpar terminal \n[4] Sair")
+    print (yellow,"{:^40}".format("||   MENU   ||"))
+    print (red,"--" * 20)
+    print(green," [1]", reset,"Calcular IMC \n",green,"[2]",reset,"Mostrar tabela de referencia \n",yellow,"[3]",reset,"Limpar terminal \n",red,"[4]",reset,"Sair",yellow)
     print(" ")
     usuario = int(input("Digite uma opção: "))
 #FORMULÁRIO
 def formularioEntrada():
     #DISPLAY
-    print('-=' *20)
-    print("{:^40}".format("||   INFORME   ||"))
-    print('-=' *20)
+    print(red,'-=' *20)
+    print(yellow,"{:^40}".format("||   INFORME   ||"))
+    print(red,'-=' *20,reset)
 
     #ENTRADA DE DADOS
     global nome, sexo, idade, peso, altura, imc
@@ -56,42 +56,42 @@ def formularioEntrada():
     #DADOS PRINCIPAIS      
     peso =  float(input('--> Qual é seu peso (Kg): '))
     altura = float(input('--> Qual é sua altura (m): '))
-    print('-=' *20)
+    print(red,'-=' *20)
 #IMC
 def estruturaIMC():
-    print('--> O IMC desta pessoa é de {:.1f}'.format(imc))
+    print(yellow,"--> O IMC desta pessoa é de",green,"{:.1f}".format(imc))
     if imc < 18.5:
-        print('--> Voce está ABAIXO DO PESO normal')
+        print(yellow,'--> Voce está',red,'ABAIXO DO PESO',yellow,'normal')
     elif 18.6 <= imc < 25:
-        print('--> Voce está no PESO IDEAL')
+        print(yellow,'--> Voce está no',green,'PESO IDEAL')
     elif 25 <= imc < 30:
-        print('--> Voce está com SOBREPESO')
+        print(yellow,'--> Voce está com SOBREPESO')
     elif 30 <= imc < 35:
-        print('--> Voce está com OBESIDADE GRAU I')
+        print(yellow,'--> Voce está com',red,'OBESIDADE GRAU I')
     elif 35 <= imc < 40:
-        print('--> Voce está com OBESIDADE GRAU II (severa)')
+        print(yellow,'--> Voce está com',red,'OBESIDADE GRAU II (severa)')
     else:
-        print('--> Voce está com OBESIDADE GRAU III (mórbida)')
-#RELATORIA
+        print(yellow,'--> Voce está com',red,'OBESIDADE GRAU III (mórbida)')
+#RELATORIO
 def relatorio():
     sleep(1)
-    print("{:^40}".format("---> RELATÓRIO <---"))
-    print("--" * 20)
+    print(green,"{:^40}".format("---> RELATÓRIO <---"))
+    print(red,"--" * 20)
     estruturaIMC()
-    print("-=" * 20)
+    print(red,"-=" * 20)
     sleep(1)
 #TABELA INFORMATIVA
 def tabelaInfo():
-        print("-=" * 20)
+        print(red,"-=" * 20)
         print("{:^40}".format("--> TABELA INFORMATIVA IMC <--"))
-        print("--" * 20)
-        print("""IMC < 18.5: ABAIXO DO PESO\n
-IMC < 25: PESO IDEAL\n
-IMC < 30: SOBREPESO\n
-IMC < 35: OBESIDADE GRAU I\n
-IMC < 40: OBESIDADE GRAU II (severa)\n
-IMC > 40: OBESIDADE GRAU III (mórbida)""")
-        print("-=" * 20)
+        print(red,"--" * 20)
+        print(yellow,"IMC < 18.5:",red,"ABAIXO DO PESO")
+        print(yellow,"IMC < 25:",green,"PESO IDEAL")
+        print(yellow,"IMC < 30:",yellow,"SOBREPESO")
+        print(yellow,"IMC < 35:",red,"OBESIDADE GRAU I")
+        print(yellow,"IMC < 40:",red,"OBESIDADE GRAU II (severa)")
+        print(yellow,"IMC > 40:",red,"OBESIDADE GRAU III (mórbida)")
+        print(red,"-=" * 20)
 
 #EXECUÇÃO
 cabecalho()
@@ -123,6 +123,6 @@ while not sair:
         sair = True
     #ERRO   
     else:
-        print("-=" * 20)
-        print("{:^40}".format("-- ERRO!!! Opção Inválida  --"))
-        print("-=" * 20)
+        print(red,"-=" * 20)
+        print(red,"{:^40}".format("-- ERRO!!! Opção Inválida  --"))
+        print(red,"-=" * 20)
