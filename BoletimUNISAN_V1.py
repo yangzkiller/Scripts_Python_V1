@@ -9,7 +9,6 @@
 
 
 #BIBLIOTECA DE CONTROLE DE TEMPO
-from gc import get_referents
 from time import sleep
 
 #TERMINAL COLOR
