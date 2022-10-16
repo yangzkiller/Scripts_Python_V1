@@ -9,6 +9,7 @@
 
 
 #BIBLIOTECA DE CONTROLE DE TEMPO
+from gc import get_referents
 from time import sleep
 
 #TERMINAL COLOR
@@ -19,9 +20,9 @@ yellow = '\033[93m'
 blue = '\033[94m'
 
 #CABECALHO
-print("-=" * 20)
+print(red,"-=" * 20)
 print (yellow,"{:^40}".format("Boletim Escolar"))
-print(reset,"-=" * 20)
+print(red,"-=" * 20)
 sleep(1)
 
 #LAÇO
@@ -29,11 +30,11 @@ sair = False
 while not sair:
     #MENU
     print (yellow,"{:^40}".format("||   MENU   ||"))
-    print (reset,"--" * 20)
-    print(" [1] Calcular média das notas \n [2] Sair",yellow)
+    print (red,"--" * 20)
+    print(green," [1]",reset,"Calcular média das notas\n",red,"[2]",reset, "Sair",yellow)
     print(" ")
     usuario = int(input(" Digite uma opção: "))
-    print(reset,"==" *20)
+    print(red,"==" *20,reset)
 
     #ESTRUTURAIS CONDICIONAIS - MENU
 
@@ -42,7 +43,7 @@ while not sair:
         #ENTRADA DE DADOS
         P1 = float(input(" Digite a nota da  1° Prova: "))
         P2 = float(input(" Digite a nota do  2° Prova: "))
-        print( "--" * 20)
+        print(red, "--" * 20)
 
         #PROCESSAMENTO
         s = P1 * 1 + P2 * 2
@@ -52,20 +53,20 @@ while not sair:
 
         #APROVADO
         if media >= 6 :
-            print(green,f"Aluno (APROVADO) com média: {media:.2f}")
-            print(reset,"==" * 20)
+            print(yellow,"Aluno",green,"(APROVADO)",yellow,"com média:",green,f"{media:.2f}")
+            print(red,"==" * 20)
             sleep(1)
         #REPROVADO
         else:
-            print(red,f"Aluno (REPROVADO) com média: {media:.2f}")   
-            print(reset,"--" * 20)
+            print(yellow,"Aluno",red,"(REPROVADO)",yellow,"com média:",red,f"{media:.2f}")   
+            print(red,"--" * 20)
             sleep(1)
 
     #OPCAO - 2
     elif usuario == 2:
         sleep(1)
         print(yellow,"{:^40}".format("-- Programa Encerrado --"))
-        print(reset,"==" * 20)
+        print(red,"==" * 20,reset)
         sleep(1)
         sair = True
     
@@ -73,4 +74,4 @@ while not sair:
     else:
         sleep(1)
         print(red,"{:^40}".format("-- ERRO!!! Opção Inválida  --"))
-        print(reset,"==" * 20)
+        print(red,"==" * 20)
