@@ -3,61 +3,56 @@
 #DATA: 09/05/22
 
 #V1 - Programa que calcula o IMC de uma pessoa
+#++ loop
+#++ menu de 4 opções e se não forem escolhidas dará erro
 
 #BIBLIOTECA DE CONTROLE DE TEMPO
-from re import M
-import string
 from time import sleep
 
+#LIMPAR
+def limpar():
+    print("\n" * 100)
 #CABEÇALHO
 def cabecalho():
     print("-=" *20)
     print("{:^40}".format("CALCULADORA IMC"))
     print('-=' *20)
-
 #MENU
 def menu():
     global usuario
     print ("{:^40}".format("||   MENU   ||"))
     print ("--" * 20)
-    print("[1] Calcular IMC \n[2] Mostrar tabela de referencia \n[3] Sair")
+    print("[1] Calcular IMC \n[2] Mostrar tabela de referencia \n[3] Limpar terminal \n[4] Sair")
     print(" ")
     usuario = int(input("Digite uma opção: "))
-
 #FORMULÁRIO
 def formularioEntrada():
     #DISPLAY
     print('-=' *20)
     print("{:^40}".format("||   INFORME   ||"))
-    print('--' *20)
+    print('-=' *20)
 
     #ENTRADA DE DADOS
-    global nome, sexo, idade, peso, altura
-    nome = (input("--> Nome: "))
-    if nome != string:
-        print("!!ERRO!! Entrada inválida")
-        nome = (input("--> Nome: "))
+    global nome, sexo, idade, peso, altura, imc
 
-
-
-
+    nome = str(input("--> Nome: "))
+   
     #ESTRUTURA CONDICIONAL - SEXO
-    sexo = string(input("--> Sexo (M/F): "))
+    sexo = str(input("--> Sexo (M/F): "))
     if sexo == "M" or "m":
-        print("Masculino")
+        sexo = "Masculino"
     elif sexo == "F" or "f":
-        print("Feminino")
-    else:
-        print("!!ERRO!! Entrada inválida")
+        sexo = "Feminino"
+    
+    idade = (input("--> Idade: ")) 
 
-    idade = int(input("--> Idade: "))       
-    peso =  float, int(input('--> Qual é seu peso (Kg): '))
+    #DADOS PRINCIPAIS      
+    peso =  float(input('--> Qual é seu peso (Kg): '))
     altura = float(input('--> Qual é sua altura (m): '))
-    print('--' *20)
-
+    print('-=' *20)
+#IMC
 def estruturaIMC():
-    print('-- > O IMC desta pessoa é de {:.1f}'.format(imc))
-    print("--" * 20)
+    print('--> O IMC desta pessoa é de {:.1f}'.format(imc))
     if imc < 18.5:
         print('--> Voce está ABAIXO DO PESO normal')
     elif 18.6 <= imc < 25:
@@ -70,27 +65,57 @@ def estruturaIMC():
         print('--> Voce está com OBESIDADE GRAU II (severa)')
     else:
         print('--> Voce está com OBESIDADE GRAU III (mórbida)')
+#RELATORIA
+def relatorio():
+    sleep(1)
+    print("{:^40}".format("---> RELATÓRIO <---"))
+    print("--" * 20)
+    estruturaIMC()
+    print("-=" * 20)
+    sleep(1)
+#TABELA INFORMATIVA
+def tabelaInfo():
+        print("-=" * 20)
+        print("{:^40}".format("--> TABELA INFORMATIVA IMC <--"))
+        print("--" * 20)
+        print("""IMC < 18.5: ABAIXO DO PESO\n
+IMC < 25: PESO IDEAL\n
+IMC < 30: SOBREPESO\n
+IMC < 35: OBESIDADE GRAU I\n
+IMC < 40: OBESIDADE GRAU II (severa)\n
+IMC > 40: OBESIDADE GRAU III (mórbida)""")
+        print("-=" * 20)
+
 #EXECUÇÃO
 cabecalho()
-#LAÇO
 sair = False
 while not sair:
     menu()
+    sleep(1)
     #ESTRUTURA CONDICIONAL - MENU
+    #CALCULA IMC
     if usuario == 1:
         formularioEntrada()
 
-        #PROCESSAMENTO DE DADOS
+        #PREOCESSAMENTO DE DADOS
         imc = peso / (altura ** 2)
 
-        #ESTRUTURA CONDICIONAL
-        estruturaIMC()
-
+        #RELATORIO
+        relatorio()
+        sleep(1)
+    #MOSTRA TABELA INFORMATIVA
     elif usuario == 2:
-        print("2")
-    
+        tabelaInfo()
+        sleep(1)
+   #LIMPA TELA
     elif usuario == 3:
+        limpar()
+        cabecalho()
+    #ENCERRA O PROGRAMA PROGRAMA
+    elif usuario == 4:
         sair = True
-
+    #ERRO   
     else:
-        print("erro")
+        print("-=" * 20)
+        print("{:^40}".format("-- ERRO!!! Opção Inválida  --"))
+        print("-=" * 20)
