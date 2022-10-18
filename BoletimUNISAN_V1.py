@@ -20,7 +20,7 @@ blue = '\033[94m'
 
 #CABECALHO
 print(red,"-=" * 20)
-print (yellow,"{:^40}".format("Boletim Escolar"))
+print (yellow,"{:^40}".format("Boletim Escolar UNISAN"))
 print(red,"-=" * 20)
 sleep(1)
 
