@@ -33,7 +33,7 @@ while (sair == True):
         graus_F = 1.8 * graus_C + 32
         
         #COMANDO DE SAIDA DE DADOS
-        print(f"A temperatura é: {graus_F}°F")
+        print("A temperatura é: %.2f°F" % (graus_F))
         print("=-" *20)
                    
     #OPÇÃO - 2
@@ -46,7 +46,7 @@ while (sair == True):
         graus_C = (graus_F -32.0) * ( 5.0 /9.0 )
 
         #COMANDO DE SAIDA DE DADOS
-        print(f"A temperatura é: {graus_C}°C")
+        print("A temperatura é: %.2f°C" % (graus_C))
         print("=-" *20)
     
     #OPÇÃO - 3
