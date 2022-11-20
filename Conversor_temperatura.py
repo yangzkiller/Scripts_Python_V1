@@ -5,22 +5,30 @@
 #Programa que peça a temperatura em graus Fahrenheit,
 #Transforme e mostre a temperatura em graus Celsius e vice-versa
 
+#CORES TERMINAL
+reset = '\033[1;37m'
+red = '\033[1;31m'
+green = '\033[1;32m'
+blue = '\033[1;34m'
+purple = '\033[1;35m'
+yellow = '\033[1;33m'
+
 #DISPLAY
-print("=-" *20)
-print("    --> CONVERSOR TEMPERATURA <--")
-print("=-" *20)
+print(red,"=-" *20)
+print(reset,"    --> CONVERSOR TEMPERATURA <--")
+print(red,"=-" *20)
 
 #LAÇO
 sair = True
 while (sair == True): 
     #MENU
-    print("             ||   MENU   ||")
-    print("--" *20);
-    print("[1] Converter CELSIUS para FAHRENHEIT\n[2] Converter FAHRENHEIT para CELSIUS\n[3] Sair")
+    print(reset,"             ||   MENU   ||")
+    print(red,"--" *20);
+    print(yellow," [1] Converter CELSIUS para FAHRENHEIT\n  [2] Converter FAHRENHEIT para CELSIUS\n",red,"[3] Sair",reset)
     print(" ")
     #ENTRADA DE DADOS
     opcao = int(input("Digite uma opção: "))
-    print("=-" *20)
+    print(red,"=-" *20,reset)
 
     #ESTRUTURA CONDICIONAL - MENU
     #OPÇÃO - 1
@@ -33,8 +41,9 @@ while (sair == True):
         graus_F = 1.8 * graus_C + 32
         
         #COMANDO DE SAIDA DE DADOS
-        print("A temperatura é: %.2f°F" % (graus_F))
-        print("=-" *20)
+        print(red,"--" *20)
+        print(yellow,"A temperatura é: %.2f°F" % (graus_F))
+        print(red,"=-" *20,reset)
                    
     #OPÇÃO - 2
     elif (opcao == 2):
@@ -46,16 +55,17 @@ while (sair == True):
         graus_C = (graus_F -32.0) * ( 5.0 /9.0 )
 
         #COMANDO DE SAIDA DE DADOS
-        print("A temperatura é: %.2f°C" % (graus_C))
-        print("=-" *20)
+        print(red,"--" *20)
+        print(yellow,"A temperatura é: %.2f°C" % (graus_C))
+        print(red,"=-" *20,reset)
     
     #OPÇÃO - 3
     elif (opcao == 3):
-        print("      --> PROGRAMA ENCERRADO <--");
-        print("=-" *20)
+        print(red,"      --> PROGRAMA ENCERRADO <--");
+        print("=-" *20,reset)
         sair = False
         
     #ERRO
     else: 
-        print("        !ERRO! Entrada Inválida")
-        print("=-" *20)
+        print(red,"        !ERRO! Entrada Inválida")
+        print("=-" *20,reset)
