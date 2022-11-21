@@ -10,10 +10,13 @@ blue = '\033[1;34m'
 purple = '\033[1;35m'
 yellow = '\033[1;33m'
 
-#DISPLAY
-print(red,"=-" *20,reset)
-print("  --> CALCULADORA DE ANO BISSEXTO <--")
-print(red,"=-" *20,reset)
+def cabecalho(title):
+    print(red,"=-" *20,reset)
+    print(title)
+    print(red,"=-" *20,reset)
+
+
+cabecalho("  --> CALCULADORA DE ANO BISSEXTO <--")
 
 #LAÇO
 sair = True
